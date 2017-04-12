@@ -1,73 +1,55 @@
-<div class="mask"></div>
-<div class="content layout-sm-column layout-gt-sm-row">
+<div class="card">
+	<div class="header">
+		<div class="title">welcome</div>
+	</div>
 
-	<div class="info flex-100 layout-row">
-		<div class="layout-column flex-100">
-			<div class="title">Full City</div>
-			<div class="subtitle">
-				Save, Share, & Discover<br>Coffee
+	<div class="tabs layout-column">
+		<div class="layout-row">
+			<div class="highlight-spacer flex-10"></div>
+			<div class="flex-40">
+				<div class="highlight"></div>
 			</div>
-			<div class="hide show-gt-sm details">
-				Explore reviews, preperation notes, and recipies. Never loose track of what parameters work for you and choose to share them with others.
-			</div>
+		</div>
+		<div class="layout-row">
+			<div class="flex-10"></div>
+			<div class="tab login active flex-40" {{action 'loginForm'}}>Login</div>
+			<div class="tab join flex-40" {{action 'joinForm'}}>Join</div>
 		</div>
 	</div>
 
-
-	<div class="flex-100">
-		<div class="card">
-			<div class="header">
-				<div class="title">welcome</div>
+	{{#paper-form onSubmit=(action "submitForm") as |form|}}
+		<div class="layout-row">
+			{{form.input label="Username" value=username required=true onChange=(action (mut username))}}
+		</div>
+		<div class="layout-row">
+			{{form.input label="Password" value=pass required=true type="password" onChange=(action (mut pass))}}
+		</div>
+		{{#if joining}}
+			<div class="layout-row">
+				{{form.input label="Confirm Password" value=pass2 required=true type="password" onChange=(action (mut pass2))}}
 			</div>
-
-			<div class="tabs layout-column">
-				<div class="layout-row">
-					<div class="highlight-spacer flex-10"></div>
-					<div class="flex-40">
-						<div class="highlight"></div>
-					</div>
-				</div>
-				<div class="layout-row">
-					<div class="flex-10"></div>
-					<div class="tab login active flex-40" {{action 'loginForm'}}>Login</div>
-					<div class="tab join flex-40" {{action 'joinForm'}}>Join</div>
-				</div>
+			<div class="layout-row">
+				{{form.input label="Email" value=email required=true type="email" onChange=(action (mut email))}}
 			</div>
-
-			{{#paper-form onSubmit=(action "submitForm") as |form|}}
-				<div class="layout-row">
-					{{form.input label="Username" value=username required=true onChange=(action (mut username))}}
-				</div>
-				<div class="layout-row">
-					{{form.input label="Password" value=pass required=true type="password" onChange=(action (mut pass))}}
-				</div>
-				{{#if joining}}
-					<div class="layout-row">
-						{{form.input label="Confirm Password" value=pass2 required=true type="password" onChange=(action (mut pass2))}}
-					</div>
-					<div class="layout-row">
-						{{form.input label="Email" value=email required=true type="email" onChange=(action (mut email))}}
-					</div>
-				{{/if}}
-				<div class="layout-row">
-					{{#each errors as |e|}}
-						<div class="error">{{e.message}}</div>
-					{{/each}}
-				</div>
-				<div class="layout-row login-row">
-					{{#if submitting}}
-						{{paper-progress-circular}}
+		{{/if}}
+		<div class="layout-row">
+			{{#each errors as |e|}}
+				<div class="error">{{e.message}}</div>
+			{{/each}}
+		</div>
+		<div class="layout-row login-row">
+			{{#if submitting}}
+				{{paper-progress-circular}}
+			{{else}}
+				{{#form.submit-button raised=true primary=true}}
+					{{#if joining}}
+						Join
 					{{else}}
-						{{#form.submit-button raised=true primary=true}}
-							{{#if joining}}
-								Join
-							{{else}}
-								Login
-							{{/if}}
-						{{/form.submit-button}}
+						Login
 					{{/if}}
-				</div>
-			{{/paper-form}}
+				{{/form.submit-button}}
+			{{/if}}
 		</div>
-	</div>
+	{{/paper-form}}
 </div>
+

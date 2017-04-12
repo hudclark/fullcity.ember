@@ -1,0 +1,44 @@
+<div class="index-page">
+	<div class="mask"></div>
+
+	<div class="tall-toolbar layout-row flex-100">
+		<div class="mask"></div>
+		<div class="title">Full City</div>
+		<span class="flex"></span>
+		{{#paper-button}}
+			Popular
+		{{/paper-button}}
+		<div class="hide show-gt-xs">
+			{{#paper-button}}
+				New
+			{{/paper-button}}
+			{{#paper-button}}
+				My Coffees
+			{{/paper-button}}
+		</div>
+		{{#paper-button iconButton=true}}
+			{{paper-icon "search"}}
+		{{/paper-button}}
+	</div>
+
+	<div class="content layout-sm-column layout-gt-sm-row">
+		<div class="info flex-100 layout-row">
+			<div class="layout-column flex-100">
+				<div class="subtitle">
+					Save, Share, & Discover<br>Coffee
+				</div>
+				<div class="hide show-gt-sm details">
+					Explore reviews, preperation notes, and recipies. Never loose track of what parameters work for you and choose to share them with others.
+				</div>
+			</div>
+		</div>
+
+		<div class="flex-100">
+			{{#if auth.isLoggedIn}}
+				{{check-out-view}}
+			{{else}}
+				{{login-view on-login="onLogin"}}
+			{{/if}}
+		</div>
+	</div>
+</div>

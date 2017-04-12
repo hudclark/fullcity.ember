@@ -10,4 +10,11 @@ AuthService = Ember.Service.extend
 		@set 'token', localStorage.getItem 'token'
 		@get 'token'
 
+	isLoggedIn: Ember.computed 'token', ->
+		@get('token') isnt null and @get('token') isnt 'null'
+
+	logout: ->
+		@set 'token', null
+		@set 'user', null
+
 `export default AuthService`

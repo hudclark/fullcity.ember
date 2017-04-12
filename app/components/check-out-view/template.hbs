@@ -1,0 +1,22 @@
+<div class="card">
+	<div class="header">
+		<div class="title">
+			hello,<br>{{auth.user.username}}
+		</div>
+	</div>
+	<div class="layout-row">
+		{{#paper-button primary=true}}Popular{{/paper-button}}
+	</div>
+	<hr>
+	<div class="layout-row">
+		{{#paper-button primary=true}}New{{/paper-button}}
+	</div>
+	<hr>
+	<div class="layout-row">
+		{{#paper-button primary=true}}My Coffees{{/paper-button}}
+	</div>
+	<hr>
+	<div class="layout-row">
+		{{#paper-button class="red" onClick=(action 'logout')}}Logout{{/paper-button}}
+	</div>
+</div>

@@ -1,0 +1,15 @@
+.check-out-view {
+	button {
+		width: 100%;
+		margin: 0;
+		padding: 8px 0;
+		&.red {
+			color: color("red", "500");
+		}
+	}
+
+	hr {
+		margin: 0;
+	}
+
+}

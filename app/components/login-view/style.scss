@@ -1,149 +1,50 @@
 .login-view {
-	height: 100vh;
-	width: 100%;
-	//background-color: color("teal", "500");
-	background: url(/assets/images/esp-bg.jpg) no-repeat center top fixed;
+	.tabs {
+		margin: 0 auto 32px auto;
+		text-align: center;
+		.tab {
+			color: color("grey", "500");
+			font-weight: 500;
+			font-size: 14px;
+			transition: color .5s;
+			padding: 8px;
+			cursor: pointer;
+			&.active {
+				color: color($primary, "500");
+			}
 
-	.blur {
-		-webkit-filter: blur(1px);                                                
-		-moz-filter: blur(1px);                                                   
-		-o-filter: blur(1px);                                                     
-		-ms-filter: blur(1px);                                                    
-		filter: blur(1px)
-	}
-
-	.mask {
-		position: fixed;
-		top: 0; bottom:0; left: 0; right: 0;
-		background-color: rgba(0, 0, 0, .3);
-		z-index: 0;
-	}
-
-	.content {
-		z-index: 999;
-		position: relative;
-		margin: 0 auto;
-		padding-top: 20vh;
-		max-width: 1000px;
-		padding-right: 16px;
-		padding-left: 16px;
-		@media (min-width: 960px) {
-			padding-top: 15vh;
 		}
-		@media (max-width: 956px) {
-			padding-top: 36px;
+
+		.highlight-spacer {
+			transition: max-width .5s;
+		}
+
+		.highlight {
+			width: 32px;
+			height: 3px;
+			margin: 0 auto;
+			background-color: color($primary, "500");
 		}
 	}
 
-	.info {
-		color: white;
-
-		@media (max-width: 956px) {
-			text-align: center;
-		}
-
-		.title {
-			font-size: 48px;
-			font-weight: 800;
-			margin-bottom: 16px;
-		}
-
-		.hr {
-			height: 1px;
-			width: 80%;
-			margin: 24px auto;
-			background-color: white;
-		}
-
-		.subtitle {
-			font-weight: 100;
-			margin-bottom: 32px;
-			font-size: 24px;
-			@media (min-width: 960px) {
-				font-size: 36px;
-			}
-		}
-
-		.details {
-			margin-top: 32px;
-			text-align: left;
-			line-height: 30px;
-			font-size: 20px;
-			font-weight: 300;
-		}
+	md-input-container {
+		margin: 8px 32px 0 32px;
+		width: 100%;
 	}
 
-	.card {
-		background-color: #fff;
-		border-radius: 6px;
-		margin: 0 auto;
-		max-width: 350px;
-		box-shadow: rgba(0, 0, 0, .5) 0 0 12px 0;
+	.error {
+		font-size: 12px;
+		color: color("red", "500");
+		margin: 0 32px;
+	}
 
-		.header {
-			height: 128px;
-			//background-color: color($primary, "600");
-			background: url('/assets/images/login-bg.png') no-repeat;
-			background-size: cover;
-			border-top-left-radius: 6px;
-			border-top-right-radius: 6px;
-			position: relative;
-			.title {
-				position: absolute;
-				bottom: 8px; left: 16px;
-				font-size: 32px;
-				font-weight: 800;
-				color: white;
-			}
-		}
+	.login-row {
+		justify-content: flex-end;
+		padding-bottom: 8px;
+		padding-right: 8px;
 
-		.tabs {
-			margin: 0 auto 32px auto;
-			text-align: center;
-			.tab {
-				color: color("grey", "500");
-				font-weight: 500;
-				font-size: 14px;
-				transition: color .5s;
-				padding: 8px;
-				cursor: pointer;
-				&.active {
-					color: color($primary, "500");
-				}
-
-			}
-
-			.highlight-spacer {
-				transition: max-width .5s;
-			}
-
-			.highlight {
-				width: 32px;
-				height: 3px;
-				margin: 0 auto;
-				background-color: color($primary, "500");
-			}
-		}
-
-		md-input-container {
-			margin: 8px 32px 0 32px;
-			width: 100%;
-		}
-
-		.error {
-			font-size: 12px;
-			color: color("red", "500");
-			margin: 0 32px;
-		}
-
-		.login-row {
-			justify-content: flex-end;
-			padding-bottom: 8px;
-			padding-right: 8px;
-
-			md-progress-circular {
-				padding-right: 32px;
-			}
+		md-progress-circular {
+			padding-right: 32px;
 		}
 	}
 }
