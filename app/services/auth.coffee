@@ -14,7 +14,7 @@ AuthService = Ember.Service.extend
 		@get('token') isnt null and @get('token') isnt 'null'
 
 	logout: ->
-		@set 'token', null
+		@setToken null
 		@set 'user', null
 
 `export default AuthService`

@@ -1,0 +1,22 @@
+.like-view {
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	background: #eee;
+	height: 48px;
+	border-radius: 4px;
+	margin-left: 16px;
+	min-width: 32px;
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
+
+	transition: all .2s;
+	background-color: color("grey", "100");
+
+	&.liked {
+		background-color: color("teal", "300");
+		color: white;
+	}
+
+}

@@ -1,0 +1,45 @@
+<div class="review-box">
+
+	<div class="title">
+		{{review.coffee.title}}
+		<span class="stars">
+			{{#each stars as |s|}}
+			{{#if s}}
+			&starf;
+			{{else}}
+			&star;
+			{{/if}}
+			{{/each}}
+		</span>
+
+		<div class="subtitle">
+			{{review.coffee.roaster}}
+		</div>
+
+
+		<div class="details">
+			{{review.reviews}} other reviews 
+			<span class="bullet">&#9679;</span>
+			last review {{review.lastpost}}
+
+		</div>
+
+		<div class="author">
+			{{review.author}} wrote,
+		</div>
+		<div class="layout-row flex-100">
+
+			<div class="review-text">
+				{{review.content}}
+			</div>
+			{{like-view
+			review=review._id
+			liked=review.liked
+			likes=review.likes}}
+		</div>
+
+
+		{{#paper-button primary=true raised=true class="read-more"}}read more{{/paper-button}}
+
+	</div>
+</div>

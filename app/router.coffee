@@ -7,6 +7,9 @@ Router = Ember.Router.extend
 
 Router.map ->
 
-	@route 'popular'
+	@route 'search'
+
+	@route 'coffee', ->
+		@route 'popular'
 
 `export default Router`
