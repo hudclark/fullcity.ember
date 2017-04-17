@@ -1,7 +1,7 @@
 <div class="review-box">
 
 	<div class="title">
-		{{review.coffee.title}}
+		{{review.coffee.name}}
 		<span class="stars">
 			{{#each stars as |s|}}
 			{{#if s}}
@@ -25,12 +25,12 @@
 		</div>
 
 		<div class="author">
-			{{review.author}} wrote,
+			{{review.user}} wrote,
 		</div>
 		<div class="layout-row flex-100">
 
 			<div class="review-text">
-				{{review.content}}
+				{{review.text}}
 			</div>
 			{{like-view
 			review=review._id
@@ -39,7 +39,9 @@
 		</div>
 
 
-		{{#paper-button primary=true raised=true class="read-more"}}read more{{/paper-button}}
+		{{#paper-button primary=true raised=true class="read-more" onClick=(action 'readMore')}}
+			read more
+		{{/paper-button}}
 
 	</div>
 </div>

@@ -1,0 +1,16 @@
+.review-page {
+
+	.review-list {
+		max-width: 800px;
+		margin: 32px auto 0 auto;
+		padding: 16px;
+		//height: 100%;
+		overflow-y: auto;
+	}
+
+	.new-btn {
+		position: fixed;
+		bottom: 24px;
+		right: 24px;
+	}
+}

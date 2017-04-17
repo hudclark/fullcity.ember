@@ -6,4 +6,7 @@ ApplicationRoute = Ember.Route.extend
 		# fetch token from local storage
 		@get('auth').getToken()
 
+	afterModel: (model) ->
+		$(document).attr 'title', "Full City - #{@get 'title'}"
+
 `export default ApplicationRoute`

@@ -9,7 +9,12 @@ Router.map ->
 
 	@route 'search'
 
-	@route 'coffee', ->
+	@route 'reviews', ->
 		@route 'popular'
+		@route 'new'
+		@route 'create'
+
+	@route 'coffees', ->
+		@route 'coffee', {path: ':slug'}
 
 `export default Router`

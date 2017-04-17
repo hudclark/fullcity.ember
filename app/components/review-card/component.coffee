@@ -1,7 +1,6 @@
 ReviewCard = Ember.Component.extend
 
 	classNames: ['review-card']
-	coffee: null
 
 	stars: Ember.computed 'review.stars', ->
 		l = []
@@ -9,5 +8,10 @@ ReviewCard = Ember.Component.extend
 		for i in [0...5]
 			l.pushObject(i < stars)
 		l
+
+	actions:
+
+		readMore: ->
+			@sendAction 'open-coffee', @get('review.coffee')
 
 `export default ReviewCard`
