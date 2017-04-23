@@ -1,10 +1,14 @@
 <div class="review-list">
 	{{#each model.reviews as |review|}}
 		{{review-card
-		review=review
-		open-coffee=(action 'openCoffee')}}
+			review=review
+			open-coffee=(action 'openCoffee')}}
 	{{/each}}
 </div>
 {{#paper-button primary=true raised=true fab=true class="new-btn" onClick=(action 'createReview')}}
 	{{paper-icon 'add'}}
 {{/paper-button}}
+
+{{#if creatingReview }}
+	{{create-review cancel=(action "cancel")}}
+{{/if}}

@@ -1,0 +1,12 @@
+{{outlet}}
+
+{{#if app.modal}}
+	<div class="modal">
+		{{#paper-dialog clickOutsideToClose=true onClose=(action 'closeModal')}}
+			{{#if (eq app.modal 'login')}}
+				{{login-view
+				on-login='refresh'}}
+			{{/if}}
+		{{/paper-dialog}}
+	</div>
+{{/if}}

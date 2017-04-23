@@ -1,0 +1,73 @@
+.create-review {
+
+	width: 900px;
+	overflow: hidden;
+	form {
+		flex-grow: 1
+	}
+
+	.ticker {
+		width: 200%;
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		transition: left .3s;
+		left: 0;
+		.step {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+
+	.small-center {
+		max-width: 400px;
+		width: 100%;
+		margin: 32px auto 0 auto;
+		background: white;
+	}
+
+	.col {
+		padding: 32px;
+		color: color("grey", "800");
+
+		&.blue {
+			background-color: color("blue", "700");
+			color: white;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		textarea {
+			width: 100%;
+			min-height: 300px;
+			height: 100%;
+		}
+
+		md-input-container {
+			margin: 0;
+			padding: 0;
+			input {
+				color: white;
+			}
+			label {
+				color: color("grey", "400") !important;
+			}
+		}
+
+		.icon-label {
+			text-align: center;
+			vertical-align: top;
+			padding-top: 12px;
+		}
+	}
+
+	.title {
+		font-weight: 600;
+		margin-bottom: 32px;
+	}
+
+}

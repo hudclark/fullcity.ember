@@ -2,7 +2,7 @@
 
 ReviewsPopularRoute = ApplicationRoute.extend
 
-	title: 'Popular'
+	title: 'Popular Reviews'
 	templateName: 'reviews/list'
 	controllerName: 'reviews'
 

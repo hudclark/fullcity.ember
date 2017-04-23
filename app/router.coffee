@@ -12,7 +12,6 @@ Router.map ->
 	@route 'reviews', ->
 		@route 'popular'
 		@route 'new'
-		@route 'create'
 
 	@route 'coffees', ->
 		@route 'coffee', {path: ':slug'}

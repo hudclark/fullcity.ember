@@ -2,7 +2,7 @@
 
 ReviewsNewRoute = ApplicationRoute.extend
 
-	title: 'New'
+	title: 'New Reviews'
 	templateName: 'reviews/list'
 	controllerName: 'reviews'
 

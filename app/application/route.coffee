@@ -1,6 +1,7 @@
 ApplicationRoute = Ember.Route.extend
 
 	auth: Ember.inject.service()
+	app: Ember.inject.service()
 
 	beforeModel: ->
 		# fetch token from local storage
@@ -8,5 +9,11 @@ ApplicationRoute = Ember.Route.extend
 
 	afterModel: (model) ->
 		$(document).attr 'title', "Full City - #{@get 'title'}"
+
+	actions:
+
+		refresh: ->
+			@refresh()
+			@get('app').closeModal()
 
 `export default ApplicationRoute`

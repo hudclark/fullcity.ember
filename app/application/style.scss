@@ -2,3 +2,34 @@ body {
 	background-color: color("grey", "200");
 	min-height: 100vh;
 }
+
+md-dialog {
+	.login-view {
+		width: 350px;
+	}
+}
+	.card {
+		background-color: #fff;
+		border-radius: 6px;
+		margin: 0 auto;
+		max-width: 350px;
+		box-shadow: rgba(0, 0, 0, .5) 0 0 12px 0;
+
+		.header {
+			height: 128px;
+			//background-color: color($primary, "600");
+			background: url('/assets/images/login-bg.png') no-repeat;
+			background-size: cover;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			position: relative;
+			.title {
+				position: absolute;
+				bottom: 8px; left: 16px;
+				font-size: 32px;
+				font-weight: 800;
+				color: white;
+			}
+		}
+
+	}

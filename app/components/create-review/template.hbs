@@ -1,0 +1,96 @@
+{{#paper-dialog}}
+{{#paper-form class="create-review" as |form|}}
+
+<div class="ticker">
+
+	<div class="step">
+		<div class="layout-column flex-100 col blue">
+			<div class="title">Select a coffee to review</div>
+			<div class="small-center">
+				{{#form.autocomplete
+				required=true
+				options=coffees
+				selected=name
+				onSearchTextChange=(action (mut name))
+				search=(action "searchCoffees")
+				placeholder="Select a coffee"
+				noMatchesMessage="No coffees found. Add a new coffee."
+				onSelectionChange=(action "selectCoffee") as |coffee auto|}}
+
+				{{coffee.name}} - {{coffee.roaster}}
+
+				{{/form.autocomplete}}
+
+				{{#form.autocomplete
+				required=true
+				options=coffees
+				selected=roaster
+				onSearchTextChange=(action (mut roaster))
+				search=(action "searchRoasters")
+				placeholder="Select a roaster"
+				noMatchesMessage="No roasters found. Add a new roaster."
+				onSelectionChange=(action "selectRoaster") as |coffee|}}
+
+				{{coffee.roaster}}
+
+				{{/form.autocomplete}}
+			</div>
+
+
+		</div>
+		<div class="layout-row">
+			<span class="flex"></span>
+			{{#paper-button onClick=(action "cancel")}}Cancel{{/paper-button}}
+			{{#paper-button primary=true onClick=(action "next") disabled=disableNext}}Next{{/paper-button}}
+		</div>
+	</div>
+
+
+	<div class="step">
+		<div class="layout-row flex-100">
+			<div class="layout-column flex-50 blue col">
+				<div class="title">Recipe</div>
+				<table>
+					<tr>
+						<td class="icon-label"><i class="fa fa-thermometer-half"></i></td>
+						<td>
+							{{form.input label="Temperature" value=temp onChange=(action (mut temp))}}
+						</td>
+					</tr>
+					<tr>
+						<td class="icon-label"><i class="fa fa-balance-scale"></i></td>
+						<td>
+							{{form.input label="Dose" value=dose onChange=(action (mut dose))}}
+						</td>
+					</tr>
+					<tr>
+						<td class="icon-label"><i class="fa fa-clock-o"></i></td>
+						<td>
+							{{form.input label="Shot time" value=time onChange=(action (mut time))}}
+						</td>
+					</tr>
+					<tr>
+						<td class="icon-label"><i class="fa fa-coffee"></i></td>
+						<td>
+							{{form.input label="Output volume/weight" value=output onChange=(action (mut output))}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="layout-column flex-50">
+				<div class="col">
+					<div class="title">Review</div>
+					{{textarea value=text}}
+				</div>
+				<div class="layout-row flex-100">
+					<span class="flex"></span>
+					{{#paper-button onClick=(action "cancel")}}Cancel{{/paper-button}}
+					{{#paper-button onClick=(action "prev")}}Previous{{/paper-button}}
+					{{#form.submit-button primary=true}}Submit{{/form.submit-button}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/paper-form}}
+{{/paper-dialog}}
